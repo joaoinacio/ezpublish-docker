@@ -41,6 +41,8 @@ else
     echo "" > $BASE_DOCKERFILES/ezpublish/prepare/kickstart_template.ini
 fi
 
+cp resources/ezpublishkernel.php_solrbundle.patch $BASE_DOCKERFILES/ezpublish/solr_prepare/
+
 # Make a argumentlist where any "-d" is removed
 for i in "$@"; do
     if [ $i != "-d" ]; then

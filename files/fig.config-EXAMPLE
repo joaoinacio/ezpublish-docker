@@ -38,6 +38,10 @@ ETCD_NAME=etcdhost1
 # Password for the admin user in mariadb/mysql
 MYSQL_PASS=youmaychangethis
 
+#### Solr settings ####
+
+SOLR_ENABLED=no
+
 #### eZ Publish deployment settings ####
 
 # Generates kickstart.ini file with database settings if true
@@ -92,4 +96,5 @@ export FIX_EXECUTION_PATH=""
 export ETCD_ENABLED START_ETCD ETCD_DISCOVERY ETCD_NAME
 export MYSQL_PASS
 export EZ_KICKSTART EZ_KICKSTART_FROM_TEMPLATE EZ_PACKAGEURL EZ_INSTALLTYPE EZ_COMPOSERVERSION EZ_COMPOSERREPOSITORYURL EZ_TARBALL_FILENAME EZ_ENVIRONMENT EZ_PATCH_SW
+export SOLR_ENABLED
 export FIX_EXECUTION_PATH

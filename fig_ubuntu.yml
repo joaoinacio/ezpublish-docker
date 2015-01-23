@@ -46,10 +46,21 @@ prepare:
    - EZ_COMPOSERREPOSITORYURL
    - EZ_ENVIRONMENT
    - EZ_PATCH_SW
+solrprepare:
+  build: dockerfiles/ubuntu/ezpublish/solr_prepare
+  links:
+    - solr:solr
+    - db1:db
+  volumes_from:
+    - ezpublishvol
+  environment:
+    - SOLR_ENABLED
+    - EZ_ENVIRONMENT
 phpfpm:
   build: dockerfiles/ubuntu/php-fpm
   links:
    - db1:db
+   - solr:solr
   volumes_from:
    - ezpublishvol
   environment:
@@ -58,6 +69,7 @@ phpcli:
   build: dockerfiles/ubuntu/php-cli
   links:
    - db1:db
+   - solr:solr
   volumes_from:
    - ezpublishvol
 nginx:
@@ -86,3 +98,9 @@ behatphpcli:
    - sahi:sahi
   volumes_from:
    - ezpublishvol
+solr:
+  image: makuk66/docker-solr
+  ports:
+   - "8983:8983"
+  volumes:
+   - volumes/solr/schema/schema.xml:/opt/solr/example/solr/collection1/conf/schema.xml
