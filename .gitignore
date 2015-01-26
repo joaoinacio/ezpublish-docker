@@ -22,4 +22,5 @@ dockerfiles/ubuntu/ezpublish/prepare/setupwizard_ezstep_welcome.patch
 dockerfiles/debian/ezpublish/prepare/kickstart_template.ini
 dockerfiles/debian/ezpublish/prepare/setupwizard_ezstep_welcome.patch
 dockerfiles/ubuntu/ezpublish/solr_prepare/ezpublishkernel.php_solrbundle.patch
+dockerfiles/debian/ezpublish/solr_prepare/ezpublishkernel.php_solrbundle.patch
 
